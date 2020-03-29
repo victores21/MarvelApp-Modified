@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import "./Details.css";
 import logo from "../../images/marvel-logo.png";
 import { useParams } from "react-router";
 import Loading from "../../components/Loading/Loading";

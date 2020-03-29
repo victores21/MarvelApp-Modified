@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./style.css";
+import "./Home.css";
 import logo from "../../images/marvel-logo.png";
 import HeroCard from "../../components/HeroCard/index";
 import Loading from "../../components/Loading/Loading";

@@ -2,6 +2,7 @@ import React from "react";
 import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { Link } from "react-router-dom";
+import ErrorNotFound from "../ErrorNotFound/ErrorNotFound";
 
 const HeroCard = ({ marvelData, loading }) => {
   const override = css`
@@ -27,7 +28,7 @@ const HeroCard = ({ marvelData, loading }) => {
       <>
         {marvelData.length === 0 ? (
           <div className="container_error">
-            <p>Wow ... It seems that Thanos disintegrates that character.</p>
+            <ErrorNotFound />
           </div>
         ) : (
           marvelData.map(hero => (
