@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import logo from "../../images/marvel-logo.png";
 import HeroCard from "../../components/HeroCard/HeroCard";
 import Loading from "../../components/Loading/Loading";
 import Navbar from "../../components/Navbar/Navbar";
@@ -74,7 +73,7 @@ const Home = () => {
               <hr />
               <HeroCard marvelData={marvelData} loading={loading} />
             </div>
-            <footer>Victor Escalona ©️ 2020</footer>
+            <footer>Victor Escalona 2020</footer>
           </div>
         </div>
       </>
