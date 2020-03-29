@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import logo from "../../img/marvel-logo.png";
+import logo from "../../images/marvel-logo.png";
 import { useParams } from "react-router";
 import Loading from "../../components/Loading/Loading";
 

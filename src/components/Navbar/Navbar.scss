@@ -1,0 +1,130 @@
+.navbar {
+  grid-area: navbar;
+  height: 200px;
+  display: grid;
+  grid-template-areas:
+    "logo"
+    "search_bar";
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    grid-area: logo;
+    display: grid;
+    justify-content: center;
+  }
+  & .logo a img {
+    margin-top: 2rem;
+    height: 80px;
+    width: 200px;
+  }
+
+  & .search_bar {
+    grid-area: search_bar;
+    margin-bottom: 1rem;
+    & input {
+      background-color: #202020;
+      border: 1px solid #fff;
+      height: 40px;
+      width: 270px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 18px;
+      padding-left: 0.7rem;
+
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .search_bar {
+    input {
+      width: 500px !important;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .search_bar {
+    input {
+      width: 700px !important;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    grid-area: navbar;
+    grid-template-columns: 1fr 1fr !important;
+    height: 150px !important;
+    grid-template-areas: "logo search_bar" !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    height: 100% !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .logo {
+    justify-content: start !important;
+  }
+  .logo a img {
+    margin-top: 1.3rem !important ;
+    margin-bottom: 1.3rem !important;
+    height: 60px !important;
+    width: 150px !important;
+  }
+
+  .search_bar {
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+  .search_bar input {
+    height: 50px !important;
+    font-size: 25px !important;
+    width: 400px !important;
+  }
+
+  #search::placeholder {
+    color: #fff;
+  }
+}
+
+@media (min-width: 1440px) {
+  .navbar {
+    grid-area: navbar;
+    grid-template-columns: 1fr 1fr !important;
+    height: 150px !important;
+    grid-template-areas: "logo search_bar" !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    height: 100% !important;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .logo {
+    justify-content: start !important;
+  }
+  .logo a img {
+    margin-top: 1.3rem !important ;
+    margin-bottom: 1.3rem !important;
+  }
+
+  .search_bar {
+    display: flex !important;
+    justify-content: flex-end !important;
+  }
+  .search_bar input {
+    height: 60px !important;
+    font-size: 25px !important;
+    width: 600px !important;
+  }
+
+  #search::placeholder {
+    color: #fff;
+  }
+}

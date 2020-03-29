@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import logo from "../../img/marvel-logo.png";
+import logo from "../../images/marvel-logo.png";
 import HeroCard from "../../components/HeroCard/index";
 import Loading from "../../components/Loading/Loading";
+import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
   const [marvel, setMarvel] = useState([]);
@@ -52,42 +53,30 @@ const Home = () => {
     console.log(marvelData);
 
     return (
-      <div className="container-fk">
-        <div className="container">
-          <div className="navbar">
-            <div className="logo">
-              <a href="/">
-                <img src={logo} alt="" />
-              </a>
+      <>
+        <div className="container-fk">
+          <div className="container">
+            {/*Navbar Component*/}
+            <Navbar handleKeyUp={handleKeyUp} />
+            {/*--Hero Content--*/}
+            <div className="main_container">
+              <p id="main_title">Marvel Characters</p>
+              <p id="main_desc">
+                Watch your favorites marvel heroes and villains
+              </p>
             </div>
-            <div className="search_bar">
-              <input
-                type="text"
-                name="search"
-                id="search"
-                placeholder="Search"
-                onKeyUp={event => handleKeyUp(event)}
-              />
+            {/*--Character list-->*/}
+            <div className="character_container">
+              <p id="character_title">Characters</p>
+              <hr />
+              <ul className="list_characters">
+                <HeroCard marvelData={marvelData} loading={loading} />
+              </ul>
             </div>
+            <footer>Victor Escalona ©️ 2020</footer>
           </div>
-          {/*--Hero Content--*/}
-          <div className="main_container">
-            <p id="main_title">Marvel Characters</p>
-            <p id="main_desc">
-              Watch your favorites marvel heroes and villains
-            </p>
-          </div>
-          {/*--Character list-->*/}
-          <div className="character_container">
-            <p id="character_title">Characters</p>
-            <hr />
-            <ul className="list_characters">
-              <HeroCard marvelData={marvelData} loading={loading} />
-            </ul>
-          </div>
-          <footer>Victor Escalona ©️ 2020</footer>
         </div>
-      </div>
+      </>
     );
   }
 };
