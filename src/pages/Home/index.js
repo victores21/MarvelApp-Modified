@@ -81,9 +81,9 @@ const Home = () => {
           <div className="character_container">
             <p id="character_title">Characters</p>
             <hr />
-            <div className="list_characters">
+            <ul className="list_characters">
               <HeroCard marvelData={marvelData} loading={loading} />
-            </div>
+            </ul>
           </div>
           <footer>Victor Escalona ©️ 2020</footer>
         </div>

@@ -31,22 +31,20 @@ const HeroCard = ({ marvelData, loading }) => {
           </div>
         ) : (
           marvelData.map(hero => (
-            <>
-              <div className="card_character">
-                <Link to={`/character/${hero.id}`}>
-                  <img
-                    className="img_background"
-                    src={hero.thumbnail.path.concat(
-                      "." + hero.thumbnail.extension
-                    )}
-                    alt=""
-                  />
-                </Link>
-                <div className="text_character">
-                  <p>{hero.name}</p>
-                </div>
+            <li key={hero.id} className="card_character">
+              <Link to={`/character/${hero.id}`}>
+                <img
+                  className="img_background"
+                  src={hero.thumbnail.path.concat(
+                    "." + hero.thumbnail.extension
+                  )}
+                  alt=""
+                />
+              </Link>
+              <div className="text_character">
+                <p>{hero.name}</p>
               </div>
-            </>
+            </li>
           ))
         )}
       </>
