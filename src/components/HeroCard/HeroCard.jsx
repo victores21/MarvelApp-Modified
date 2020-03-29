@@ -3,6 +3,7 @@ import { ClipLoader } from "react-spinners";
 import { css } from "@emotion/core";
 import { Link } from "react-router-dom";
 import ErrorNotFound from "../ErrorNotFound/ErrorNotFound";
+import "./HeroCard.css";
 
 const HeroCard = ({ marvelData, loading }) => {
   const override = css`
@@ -31,22 +32,24 @@ const HeroCard = ({ marvelData, loading }) => {
             <ErrorNotFound />
           </div>
         ) : (
-          marvelData.map(hero => (
-            <li key={hero.id} className="card_character">
-              <Link to={`/character/${hero.id}`}>
-                <img
-                  className="img_background"
-                  src={hero.thumbnail.path.concat(
-                    "." + hero.thumbnail.extension
-                  )}
-                  alt=""
-                />
-              </Link>
-              <div className="text_character">
-                <p>{hero.name}</p>
-              </div>
-            </li>
-          ))
+          <ul className="list_characters">
+            {marvelData.map(hero => (
+              <li key={hero.id} className="card_character">
+                <Link to={`/character/${hero.id}`}>
+                  <img
+                    className="img_background"
+                    src={hero.thumbnail.path.concat(
+                      "." + hero.thumbnail.extension
+                    )}
+                    alt=""
+                  />
+                </Link>
+                <div className="text_character">
+                  <p>{hero.name}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         )}
       </>
     );

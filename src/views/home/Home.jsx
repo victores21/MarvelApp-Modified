@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import logo from "../../images/marvel-logo.png";
-import HeroCard from "../../components/HeroCard/index";
+import HeroCard from "../../components/HeroCard/HeroCard";
 import Loading from "../../components/Loading/Loading";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -9,7 +9,7 @@ const Home = () => {
   const [marvel, setMarvel] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  //test.
+  //query
   const [query, setQuery] = useState("");
 
   //handlers
@@ -34,8 +34,6 @@ const Home = () => {
       const data = await req.json();
       setMarvel(data);
       setLoading(false);
-      //     URLWith   "https://gateway.marvel.com/v1/public/characters?nameStartsWith=${query}&ts=1&apikey=b56fcef71c17650ee98d4e32aad2416f&hash=82890dfb029d385e40ff1ec55203b80f"
-      //Url No With https://gateway.marvel.com/v1/public/characters?ts=1&apikey=b56fcef71c17650ee98d4e32aad2416f&hash=82890dfb029d385e40ff1ec55203b80f
     };
     fetchData();
   }, [query]);
@@ -49,6 +47,7 @@ const Home = () => {
   }
 
   if (!loading) {
+    //Data from the api
     const marvelData = marvel.data.results;
     console.log(marvelData);
 
@@ -69,9 +68,7 @@ const Home = () => {
             <div className="character_container">
               <p id="character_title">Characters</p>
               <hr />
-              <ul className="list_characters">
-                <HeroCard marvelData={marvelData} loading={loading} />
-              </ul>
+              <HeroCard marvelData={marvelData} loading={loading} />
             </div>
             <footer>Victor Escalona ©️ 2020</footer>
           </div>
