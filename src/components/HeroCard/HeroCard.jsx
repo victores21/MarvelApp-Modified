@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import ErrorNotFound from "../ErrorNotFound/ErrorNotFound";
 import "./HeroCard.css";
 
+//Component that shows all the characters' card
 const HeroCard = ({ marvelData, loading }) => {
+  //Loading spinner
   const override = css`
     display: block;
     margin: 0 auto;
@@ -24,6 +26,7 @@ const HeroCard = ({ marvelData, loading }) => {
       </>
     );
   }
+
   if (!loading) {
     return (
       <>

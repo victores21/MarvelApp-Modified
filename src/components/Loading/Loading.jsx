@@ -1,6 +1,5 @@
 import React from "react";
 import "./Loading.css";
-
 import { MoonLoader } from "react-spinners";
 
 const Loading = ({ loading }) => {

@@ -23,10 +23,14 @@ const Details = () => {
     fetchCharacter();
   }, []);
 
+  //If loading = yes  will be shown a loading component
   if (loading) {
     return <Loading />;
   }
+
+  //Here is where will be shown all the character details
   if (!loading) {
+    //Characters data
     const characterData = character.data.results[0];
     console.log(characterData);
     return (
@@ -52,7 +56,6 @@ const Details = () => {
                   alt=""
                 />
               </div>
-
               <div className="details_character_info">
                 <p id="details_character_title">{characterData.name}</p>
                 {characterData.description === "" ? (

@@ -6,13 +6,13 @@ import Loading from "../../components/Loading/Loading";
 import Navbar from "../../components/Navbar/Navbar";
 
 const Home = () => {
-  const [marvel, setMarvel] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [marvel, setMarvel] = useState([]); //Hook where are stored all the character info
+  const [loading, setLoading] = useState(true); //Hook for loading
 
   //query
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(""); //Hook to store the search from input text
 
-  //handlers
+  //handler that is responsible to get the text from the input
   const handleKeyUp = event => {
     let value = event.target.value;
     let queryTransformed = value.replace(/ /g, "%20");
@@ -20,8 +20,10 @@ const Home = () => {
   };
 
   useEffect(() => {
+    //Function who fetches the data
     const fetchData = async () => {
       let req = "";
+      //If the query (Input text is empty) the function will fetch de firsts characters
       if (query === "") {
         req = await fetch(
           "https://gateway.marvel.com/v1/public/characters?ts=1&apikey=b56fcef71c17650ee98d4e32aad2416f&hash=82890dfb029d385e40ff1ec55203b80f"
@@ -54,9 +56,11 @@ const Home = () => {
     return (
       <>
         <div className="container-fk">
+          {/*Main Container */}
           <div className="container">
             {/*Navbar Component*/}
             <Navbar handleKeyUp={handleKeyUp} />
+
             {/*--Hero Content--*/}
             <div className="main_container">
               <p id="main_title">Marvel Characters</p>
@@ -77,4 +81,5 @@ const Home = () => {
     );
   }
 };
+
 export default Home;
